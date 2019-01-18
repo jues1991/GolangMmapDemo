@@ -14,7 +14,7 @@ func main() {
 	var fi os.FileInfo
 	var data []byte
 	//打开文件
-	fn = "/home/jues/go/src/GolangMmapDemo/1.data"
+	fn = "1.data"
 	fd, err = syscall.Open(fn, syscall.O_RDWR, 0)
 	if nil != err {
 		fmt.Println("open file fail!!!")
@@ -33,7 +33,7 @@ func main() {
 		return
 	}
 	//
-	addr := &data[cap(data)-1]
+	addr := &data[0]
 	fmt.Println("mmap success,addr=", addr, "size=", len(data))
 
 	//取消映射
